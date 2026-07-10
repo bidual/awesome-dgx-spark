@@ -259,7 +259,7 @@ Beyond LLMs, GB10's unified memory and aarch64 stack run scientific compute: pro
 - [GigCoder-ai/dgxtop](https://github.com/GigCoder-ai/dgxtop) - Terminal hardware monitor for DGX Spark with GB10 GPU, CPU, memory, and per-drive I/O speeds.
 - [hoesing/spark-gpu-throttle-check](https://github.com/hoesing/spark-gpu-throttle-check) - Throttle test for DGX Spark that loads the GB10 with cuBLAS matmuls to detect sub-850 MHz USB-PD power-delivery throttling.
 - [jasonacox/dgx-spark](https://github.com/jasonacox/dgx-spark) - Tools for the NVIDIA DGX Spark AI personal supercomputer.
-- [joeynyc/spark-doctor](https://github.com/joeynyc/spark-doctor) - Diagnostic CLI for DGX Spark that flags the GB10 14 W power cap, unified-memory pressure, and thermal risk, and validates vLLM/Ollama/SGLang recipes.
+- [joeynyc/spark-doctor](https://github.com/joeynyc/spark-doctor) - Read-only diagnostic CLI for DGX Spark: 14 W power cap, unified-memory pressure, thermal risk, CUDA 13 / SM_121 wheel mismatches, Docker runtime, and vLLM/Ollama/SGLang recipe checks.
 - [lynx-lee/lynx-ollama](https://github.com/lynx-lee/lynx-ollama) - Ollama manager for DGX Spark with GB10 unified-memory detection and auto-tuned concurrency.
 - [mcampa/sparkrun-ui](https://github.com/mcampa/sparkrun-ui) - Web UI for sparkrun on DGX Spark with launch wizard, live log tail, and cluster monitor.
 - [mchenetz/sparkd](https://github.com/mchenetz/sparkd) - Localhost dashboard for a DGX Spark fleet, with HF browsing, Claude-generated vLLM recipes, and single-box or Ray-cluster launch.
