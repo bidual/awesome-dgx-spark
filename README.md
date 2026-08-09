@@ -224,6 +224,7 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [tpurtell/glm-5.2-4x-spark-1x-rtx6k-96gb](https://github.com/tpurtell/glm-5.2-4x-spark-1x-rtx6k-96gb) - Rust attention-FFN disaggregation engine splitting GLM-5.2 across one RTX PRO 6000 coordinator and four DGX Spark expert nodes, at 65 tok/s decode and 1,750 tok/s prefill.
 - [urbanspr1nter/dgx-spark-bare-metal](https://github.com/urbanspr1nter/dgx-spark-bare-metal) - Four-node DGX Spark Ray/vLLM cluster (480 GB) for MoE serving, with an sm_121 CUTLASS FP8 patch.
 - [vroomfondel/dgxarley](https://github.com/vroomfondel/dgxarley) - Ansible playbooks for a K3s cluster of four DGX Spark nodes and an x86 control plane, running distributed SGLang inference.
+- [www-ai-rs/gb10-deepseek-v4-flash](https://github.com/www-ai-rs/gb10-deepseek-v4-flash) - Two-node DGX Spark launcher and benchmark harness for DeepSeek-V4-Flash with GPU rail power sampling and executed correctness tests.
 - [ZD-AI-Lab/Triple-GB10](https://github.com/ZD-AI-Lab/Triple-GB10) - Three-node GB10 RoCE ring (QSFP, no switch) for Ray + vLLM pipeline-parallel across 3 Sparks.
 
 ## Image & Media Generation
