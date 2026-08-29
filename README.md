@@ -108,7 +108,7 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 
 ### Other Engines
 
-- [antirez/ds4](https://github.com/antirez/ds4) - DwarfStar local inference engine in C for DeepSeek V4 Flash and GLM 5.2, with a `make cuda-spark` target and published GB10 numbers of 826 t/s prefill and 18.1 t/s decode.
+- [antirez/ds4](https://github.com/antirez/ds4) - DwarfStar inference engine in C for DeepSeek V4 Flash and GLM 5.2, `make cuda-spark` target, GB10 prefill above 820 t/s through 65K context while decode falls 18.1 to 13.8.
 - [Avarok-Cybersecurity/atlas](https://github.com/Avarok-Cybersecurity/atlas) - Pure-Rust inference engine for GB10, one binary over 15 model and quant kernel targets, TurboQuant KV cache, 131 tok/s on Qwen3.5-35B-A3B with MTP K=2.
 - [blake-snc/sm121-kernels](https://github.com/blake-snc/sm121-kernels) - Hand-written PTX kernel library for sm_121 in 259 files, covering flash attention, GEMM, Gated DeltaNet, and MoE, driver-only via cudarc with FP8 attention at ~108 TFLOPS.
 - [calico88x/DGX-Model-Manager](https://github.com/calico88x/DGX-Model-Manager) - Control plane for managing Ollama, SGLang, vLLM, llama.cpp, LocalAI, and ComfyUI on DGX Spark, with roles, API tokens, and Hugging Face cache inventory.
@@ -118,7 +118,7 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [mark-ramsey-ri/trt-dgx-spark](https://github.com/mark-ramsey-ri/trt-dgx-spark) - TensorRT-LLM serving on 1-to-N DGX Spark with an arm64 nvcr 1.2.1 container and tensor-parallel auto-scaling to cluster size.
 - [rdaum/eider](https://github.com/rdaum/eider) - Rust and CUDA inference server for sm_121 NVFP4 with no tensor-runtime dependency, up on Qwen3.8-Flash-Next release day at 190 tok/s prefill and 11 to 13 decode.
 - [rdoiron/mimo-mods-for-dgx-spark](https://github.com/rdoiron/mimo-mods-for-dgx-spark) - Ten vLLM runtime patches for MiMo-V2.5 on sm_121a, with a CUTLASS block-FP8 bypass and a backported tool-call corruption fix (PR #42969).
-- [sf-stav/veloGB10](https://github.com/sf-stav/veloGB10) - Rust and CUDA inference engine built only for GB10, running Qwen3.6-35B at ~111 tok/s on one machine and ~130 on two over ConnectX-7, with prebuilt binaries.
+- [sf-stav/veloGB10](https://github.com/sf-stav/veloGB10) - Rust and CUDA inference engine built only for GB10, Qwen3.6-35B at 111 tok/s on one machine and 130 on two, Qwen3.8-27B at 85 on four under DFlash 2.
 - [Th0rgal/dgx-spark-router](https://github.com/Th0rgal/dgx-spark-router) - Stdlib-only OpenAI-compatible router that swaps ten llama.cpp and vLLM backends in and out of 128 GB unified memory, with per-model GB10 NVFP4 flags.
 - [xangel82/DS4-GB10-GX10-DSpark-CUDA](https://github.com/xangel82/DS4-GB10-GX10-DSpark-CUDA) - DS4 fork for DeepSeek-V4-Flash on one GB10, lossless DSpark and HybridLC decode at 24-26 t/s on tool calls against the original 13, 900-953 t/s prefill.
 
@@ -338,7 +338,7 @@ Beyond LLMs, GB10's unified memory and aarch64 stack run scientific compute: pro
 ## Operating Systems & Containers
 
 - [graham33/nixos-dgx-spark](https://github.com/graham33/nixos-dgx-spark) - Nix flake with a NixOS module for NVIDIA's DGX Spark kernel, bootable USB image, and 15 playbook devshells for TRT-LLM, NVFP4, and NCCL over QSFP.
-- [maxspevack/spark-rocky](https://github.com/maxspevack/spark-rocky) - Rocky Linux 10.2 Live-USB for DGX Spark on the CIQ 6.18 kernel and open driver 610.57.04, carrying zero patches of its own and validated at 1.010x benchmark parity.
+- [maxspevack/spark-rocky](https://github.com/maxspevack/spark-rocky) - Rocky Linux 10.2 Live-USB for DGX Spark on the CIQ 6.18 kernel, shipping 4k pages because 64k faults on every driver branch but the 580, measured 10.4% slower.
 - [Neural-ICE/ICE-CoreOS](https://github.com/Neural-ICE/ICE-CoreOS) - Immutable bootc OS for DGX Spark on CentOS Stream 10, GB10 kernel at 4 KiB pages, TPM2-unlocked LUKS2, and atomic over-the-air updates with rollback from a signed registry.
 - [RageLtd/arch-dgx-spark-iso](https://github.com/RageLtd/arch-dgx-spark-iso) - Arch Linux installer ISO builder for DGX Spark, with the linux-dgx-spark kernel and archinstall config.
 - [scitrera/cuda-containers](https://github.com/scitrera/cuda-containers) - Prebuilt DGX Spark containers for vLLM, SGLang, llama.cpp, and PyTorch that build NCCL and PyTorch first as a base layer and version by vLLM release rather than tracking git.
