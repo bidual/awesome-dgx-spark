@@ -30,21 +30,25 @@ while IFS= read -r entry; do
   rest=${entry#*:}
   desc=${rest#*) - }
   words=$(printf '%s' "$desc" | wc -w | tr -d ' ')
+  # Naming canon applies to prose, not to quoted literals: a flag value, tag or
+  # filename inside backticks has exactly one correct spelling and it is upstream's
+  # (`--kv-cache-dtype nvfp4`, `linux/arm64`). Strip code spans before the S5 checks.
+  prose=$(printf '%s' "$desc" | sed 's/`[^`]*`//g')
 
   # ---- S5 naming canon (ERROR: one spelling per thing, no exceptions) ----
-  printf '%s' "$desc" | grep -qE '\bSM_?121\b' \
-    && report ERROR "$ln" "S5/sm_121-casing" "use sm_121, not $(printf '%s' "$desc" | grep -oE '\bSM_?121\b' | head -1)"
+  printf '%s' "$prose" | grep -qE '\bSM_?121\b' \
+    && report ERROR "$ln" "S5/sm_121-casing" "use sm_121, not $(printf '%s' "$prose" | grep -oE '\bSM_?121\b' | head -1)"
   # aarch64 canon. Carve-out: keep upstream spelling when the word names an artifact
   # (Docker/NGC platform tags are literally linux/arm64), so only flag bare platform use.
-  if printf '%s' "$desc" | grep -qiE '\bARM64\b'; then
-    printf '%s' "$desc" | grep -qiE '\b(arm64 (nvcr|image|container|wheel|tag|build|binary)|linux/arm64|[-/]arm64\b)' \
+  if printf '%s' "$prose" | grep -qiE '\bARM64\b'; then
+    printf '%s' "$prose" | grep -qiE '\b(arm64 (nvcr|image|container|wheel|tag|build|binary)|linux/arm64|[-/]arm64\b)' \
       || report ERROR "$ln" "S5/aarch64-canon" "use aarch64 for the platform (arm64 only when naming an artifact tag)"
   fi
-  printf '%s' "$desc" | grep -qE '\bDGX-Spark\b|\bDGX SPARK\b|\bdgx spark\b' \
+  printf '%s' "$prose" | grep -qE '\bDGX-Spark\b|\bDGX SPARK\b|\bdgx spark\b' \
     && report ERROR "$ln" "S5/DGX-Spark-casing" "canon is 'DGX Spark'"
-  printf '%s' "$desc" | grep -qE '\bNvidia\b|\bNVidia\b' \
+  printf '%s' "$prose" | grep -qE '\bNvidia\b|\bNVidia\b' \
     && report ERROR "$ln" "S5/NVIDIA-casing" "canon is 'NVIDIA'"
-  printf '%s' "$desc" | grep -qE '\bnvfp4\b' \
+  printf '%s' "$prose" | grep -qE '\bnvfp4\b' \
     && report ERROR "$ln" "S5/NVFP4-casing" "canon is 'NVFP4'"
 
   # ---- S7 length + punctuation ----
