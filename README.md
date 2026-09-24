@@ -79,7 +79,6 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [MiaAI-Lab/Ornith-1.5-35B-A3B-DGX-Spark](https://github.com/MiaAI-Lab/Ornith-1.5-35B-A3B-DGX-Spark) - Ornith-1.5-35B-A3B NVFP4 with in-checkpoint MTP on one DGX Spark, 86.3 to 440 tok/s at 24 streams, plus two b12x patches for CUDA-graph capture.
 - [MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark) - Qwen3.8-Flash-Next NVFP4 on one DGX Spark with the PLE table packed and memory-mapped, 48.7 tok/s single stream and 162.9 at eight, images and video on the same endpoint.
 - [mouwp2026/qwen3.8-flash-next-gx10-mtp-hashk](https://github.com/mouwp2026/qwen3.8-flash-next-gx10-mtp-hashk) - Qwen3.8-Flash-Next on one GB10 with the PLE table compressed to a 12.8 GB HashK build, FP8 dense cast, and a shrunk-vocabulary MTP head, 104 tok/s at six streams.
-- [nacyot/vllm-ds4f-gb10](https://github.com/nacyot/vllm-ds4f-gb10) - vLLM fork for DeepSeek-V4.1-Flash on four GB10 at TP=4 with disk KV offload, a 493K-token session restored from SSD in 7.8 s against a 392 s cold prefill.
 - [omnia-projetcs/spark-dgx](https://github.com/omnia-projetcs/spark-dgx) - Interactive vLLM Docker launcher for DGX Spark, 22 preset model configs from single-node NVFP4 to TP=4 Ray clusters, 10 with measured TTFT and concurrency tables.
 - [Sapid-Labs/vllm-spark-arena](https://github.com/Sapid-Labs/vllm-spark-arena) - Crowd-optimization arena for vLLM on sm_121, scoring sitecustomize.py patches over a pinned wheel as paired ratios, gated on byte-identical output and a held-out timed speedup.
 - [sayyidfareed/qwen3.8-flash-next-dgx-spark-1m](https://github.com/sayyidfareed/qwen3.8-flash-next-dgx-spark-1m) - Qwen3.8-Flash-Next NVFP4 at a validated 989,801-token request on one ASUS GX10, clean PLE pages released by MADV_DONTNEED watermark, 5/5 needles at 26.7 tok/s single stream.
@@ -264,6 +263,7 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [MiaAI-Lab/Inkling-Small-NVFP4-Dual-DGX-Sparks](https://github.com/MiaAI-Lab/Inkling-Small-NVFP4-Dual-DGX-Sparks) - Inkling-Small-NVFP4 across two DGX Spark on SGLang at a 1,142,712-token KV pool, 33.9 tok/s single stream, page size 1 required for the triton DSpark verify path.
 - [MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks) - Qwen3.8-Flash-Next NVFP4 on two DGX Spark under vLLM TP2 with expert parallel and MTP-3, 54.4 tok/s c1 and 207 aggregate at eight, 3.65M-token fp8 KV pool.
 - [nabe2030/dgx-spark-2node-rpc](https://github.com/nabe2030/dgx-spark-2node-rpc) - GLM-5.2 GGUF at 228.5 GB split across two DGX Spark nodes over llama.cpp RPC, CX7 measured as two ~100 Gb/s PCIe Gen5 x4 paths, RDMA vs TCP A/B.
+- [nacyot/vllm-ds4f-gb10](https://github.com/nacyot/vllm-ds4f-gb10) - vLLM fork for DeepSeek-V4.1-Flash on four GB10 at TP=4 with disk KV offload, a 493K-token session restored from SSD in 7.8 s against a 392 s cold prefill.
 - [neko-legends/spark-bench](https://github.com/neko-legends/spark-bench) - Four DGX Spark as one TP4 cluster over five dated model lanes, the live one DeepSeek-V4.1-Flash uncensored on SGLang at 33 tok/s prose and 54 code c1.
 - [OsakaTX/qwen3.8-flash-next-vllm-dgx-spark](https://github.com/OsakaTX/qwen3.8-flash-next-vllm-dgx-spark) - Qwen3.8-Flash-Next NVFP4 on two DGX Spark under vLLM TP2 with MTP n=3, 41-44 tok/s c1 and 162 aggregate at eight, RDMA passthrough worth 40-45%.
 - [pfn/spark-vllm-compose](https://github.com/pfn/spark-vllm-compose) - Head and worker Docker Compose files that run vLLM across DGX Spark nodes with native --nnodes/--node-rank instead of Ray, shipped services for Qwen3.5-397B-A17B-int4 and MiniMax-M2.7.
@@ -361,6 +361,7 @@ Beyond LLMs, GB10's unified memory and aarch64 stack run scientific compute: pro
 - [hoesing/spark-gpu-throttle-check](https://github.com/hoesing/spark-gpu-throttle-check) - Throttle test for DGX Spark that loads the GB10 with cuBLAS matmuls and flags clocks staying below a 1400 MHz threshold, a suspected USB-PD power-delivery fault.
 - [jasonacox/dgx-spark](https://github.com/jasonacox/dgx-spark) - Project hub for GB10 whose nanochat scripts pretrained a chat model from scratch in 9 days for about $8 of power, plus two-Spark InfiniBand training.
 - [jeffrymahbuubi/dgx-spark-stress-test](https://github.com/jeffrymahbuubi/dgx-spark-stress-test) - Burn-in suite for GB10 unit qualification, 6-24 hour llama.cpp 70B plus SDXL load at ~96% utilization, ~85 GB resident, with 10s temperature and power CSVs.
+- [jeremyeder/dgx-agentskills](https://github.com/jeremyeder/dgx-agentskills) - Claude Code integration for DGX Spark: local model serving, GPU monitoring, and VM management.
 - [joeynyc/spark-doctor](https://github.com/joeynyc/spark-doctor) - Read-only diagnostic CLI for DGX Spark: 14 W power cap, unified-memory pressure, thermal risk, CUDA 13 / sm_121 wheel mismatches, Docker runtime, and vLLM/Ollama/SGLang recipe checks.
 - [lynx-lee/lynx-ollama](https://github.com/lynx-lee/lynx-ollama) - Ollama manager with a Go web console whose optimize command reads GB10 unified memory to set 131K context, 8-way parallel, and q8_0 KV cache.
 - [mcampa/sparkrun-ui](https://github.com/mcampa/sparkrun-ui) - Web UI for sparkrun with launch wizard, chat, benchmark charts, and live per-host GPU bars, run via npx or a published aarch64 container.
@@ -388,7 +389,6 @@ Beyond LLMs, GB10's unified memory and aarch64 stack run scientific compute: pro
 ## Community & Resource Collections
 
 - [AEON-7/AEON-7](https://github.com/AEON-7/AEON-7) - Index of AEON-7's releases, mainly DGX Spark NVFP4 model packs, prebuilt vLLM images, and a voice-AI stack, plus Apple Silicon MLX builds.
-- [jeremyeder/dgx-agentskills](https://github.com/jeremyeder/dgx-agentskills) - Claude Code integration for DGX Spark: local model serving, GPU monitoring, and VM management.
 - [odnodn/dgx-spark](https://github.com/odnodn/dgx-spark) - Curated collection of NVIDIA DGX Spark resources and self-hosted AI projects.
 
 ## Contributing
