@@ -116,6 +116,7 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 
 - [0xBakeer/deepseek-v41-flash-spark](https://github.com/0xBakeer/deepseek-v41-flash-spark) - DeepSeek-V4.1-Flash on one DGX Spark in a plain-PyTorch engine with routing-ranked expert keep-sets, 24.3-36.6 tok/s by workload at 44% keep, above the reliable 39% default.
 - [antirez/ds4](https://github.com/antirez/ds4) - DwarfStar C inference engine for DeepSeek, GLM and Qwen3.8 Flash Next with a `make cuda-spark` target, DeepSeek V4 Flash Q2 prefill above 820 t/s through 65K, decode 18.1 to 13.8.
+- [ashhart/TensorFold](https://github.com/ashhart/TensorFold) - Speculative-decoding LLM server for Apple Silicon and NVIDIA with replies equal to serial decoding, CUDA engines for one or two DGX Spark, GLM-5.3-Flash at 256k tokens on two.
 - [Avarok-Cybersecurity/atlas](https://github.com/Avarok-Cybersecurity/atlas) - Pure Rust and CUDA inference engine in one 75 MB binary with GB10 as its verified target, ahead of vLLM at every rung of its published C=1 to C=128 ladder.
 - [Baekpica/ds4-dfm-rs](https://github.com/Baekpica/ds4-dfm-rs) - Rust-host continuation of the ds4 engine with DGX Spark as release target, C binaries kept as oracles over a 60-cell migration gate, eleven validated model families.
 - [blake-snc/sm121-kernels](https://github.com/blake-snc/sm121-kernels) - Hand-written PTX kernel library for sm_121 in 259 files, covering flash attention, GEMM, Gated DeltaNet, and MoE, driver-only via cudarc with FP8 attention at ~108 TFLOPS.
