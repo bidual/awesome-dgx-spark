@@ -317,7 +317,6 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [mmartial/ComfyUI-Nvidia-Docker](https://github.com/mmartial/ComfyUI-Nvidia-Docker) - Multi-platform ComfyUI Docker (x86_64, Blackwell, DGX Spark) with published aarch64 DGX images and userscripts that build SageAttention 2 and comfy_kitchen from source.
 - [mvalancy/blender-nvidia-gb10](https://github.com/mvalancy/blender-nvidia-gb10) - Blender 5.0.1 source build for GB10 with Cycles CUDA 13 GPU rendering, via four inherited aarch64 patches and four CUDA-13 patches for OIDN, libglu, Wayland, and libdrm.
 - [phaserblast/ComfyUI-DGXSparkSafetensorsLoader](https://github.com/phaserblast/ComfyUI-DGXSparkSafetensorsLoader) - Zero-copy model loader for ComfyUI on DGX Spark using the fastsafetensors library.
-- [Saganaki22/ComfyUI-sol-attn](https://github.com/Saganaki22/ComfyUI-sol-attn) - NVIDIA Sol-Attn sparse attention as ComfyUI nodes with an sm_121 TMA path, 1.48-1.92x over SageAttention on GB10 kernel benchmarks at 8K to 32K tokens.
 - [Triplany/comfyui-dgx-spark](https://github.com/Triplany/comfyui-dgx-spark) - Version-aware updater kit for an existing ComfyUI install on DGX Spark, sm_121 SageAttention rebuild, aarch64 cu13 ONNX Runtime wheel, and an LTX 2.3 audio NaN clamp.
 
 ## Audio & Speech
