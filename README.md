@@ -292,7 +292,6 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [MiaAI-Lab/DeepSeek-v4.1-Flash-EXL3-2x-DGX-Sparks](https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-EXL3-2x-DGX-Sparks) - DeepSeek-V4.1-Flash at 2.9 bpw EXL3 on two DGX Spark with vLLM TP2 and file-backed Engram, 31.6 tok/s single stream with DSpark k=3, 600K context.
 - [MiaAI-Lab/GLM-5.2-NVFP4-AQLM-Triple-DGX-Sparks](https://github.com/MiaAI-Lab/GLM-5.2-NVFP4-AQLM-Triple-DGX-Sparks) - GLM-5.2 NVFP4 plus AQLM 2-bit hybrid on three DGX Spark at TP3, 21 tok/s structured at 348K vision context with top-4 routing, 25-26 on fp8 KV at 235K.
 - [MiaAI-Lab/GLM-5.3-EXL3-3x-DGX-Sparks-TensorFold](https://github.com/MiaAI-Lab/GLM-5.3-EXL3-3x-DGX-Sparks-TensorFold) - GLM-5.3 EXL3 2.75 bpw on three DGX Spark under TensorFold, a 499,712-token window by context parallelism, 41.7 tok/s code, a 94K prompt resumed from NVMe in 3.0 s.
-- [MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks](https://github.com/MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks) - GLM-5.3-Flash as EXL3 4 bpw under DFlash2 k=7 on two DGX Spark, 62.9 tok/s structured c1 and 36.1 prose with opt-in adaptive k, 850K default context.
 - [MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks-TensorFold](https://github.com/MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks-TensorFold) - GLM-5.3-Flash EXL3 on two DGX Spark under TensorFold v0.6.0 with 96 patches, 1,048,576-token window at 4 concurrent requests, 60.4 tok/s prose and 114.7 structured at c1.
 - [MiaAI-Lab/GLM-5.3-Flash-NVFP4-Dual-DGX-Spark](https://github.com/MiaAI-Lab/GLM-5.3-Flash-NVFP4-Dual-DGX-Spark) - GLM-5.3-Flash NVFP4 on two DGX Spark over Ray TP=2 with image and video input, MTP at four draft tokens, FP8 KV cache and 262K context.
 - [MiaAI-Lab/Inkling-Small-NVFP4-Dual-DGX-Sparks](https://github.com/MiaAI-Lab/Inkling-Small-NVFP4-Dual-DGX-Sparks) - Inkling-Small-NVFP4 across two DGX Spark on SGLang at a 1,142,712-token KV pool, 33.9 tok/s single stream, page size 1 required for the triton DSpark verify path.
@@ -361,7 +360,6 @@ You can connect two DGX Spark units directly over 200 Gb/s QSFP for double the m
 - [mmartial/ComfyUI-Nvidia-Docker](https://github.com/mmartial/ComfyUI-Nvidia-Docker) - Multi-platform ComfyUI Docker (x86_64, Blackwell, DGX Spark) with published aarch64 DGX images and userscripts that build SageAttention 2 and comfy_kitchen from source.
 - [mvalancy/blender-nvidia-gb10](https://github.com/mvalancy/blender-nvidia-gb10) - Blender 5.0.1 source build for GB10 with Cycles CUDA 13 GPU rendering, via four inherited aarch64 patches and four CUDA-13 patches for OIDN, libglu, Wayland, and libdrm.
 - [phaserblast/ComfyUI-DGXSparkSafetensorsLoader](https://github.com/phaserblast/ComfyUI-DGXSparkSafetensorsLoader) - Zero-copy model loader for ComfyUI on DGX Spark using the fastsafetensors library.
-- [Triplany/comfyui-dgx-spark](https://github.com/Triplany/comfyui-dgx-spark) - Version-aware updater kit for an existing ComfyUI install on DGX Spark, sm_121 SageAttention rebuild, aarch64 cu13 ONNX Runtime wheel, and an LTX 2.3 audio NaN clamp.
 
 ## Audio & Speech
 
@@ -437,7 +435,6 @@ Beyond LLMs, GB10's unified memory and aarch64 stack run scientific compute: pro
 - [maxspevack/spark-rocky](https://github.com/maxspevack/spark-rocky) - Rocky Linux 10.2 Live-USB for DGX Spark on the CIQ 6.18 kernel, shipping 4k pages because 64k faults on every driver branch but the 580, measured 10.4% slower.
 - [Neural-ICE/ICE-CoreOS](https://github.com/Neural-ICE/ICE-CoreOS) - Immutable bootc OS for DGX Spark on CentOS Stream 10 with a 4 KiB-page GB10 kernel, optional TPM2-unlocked LUKS2, and a signed-UKI USB installer.
 - [RageLtd/arch-dgx-spark-iso](https://github.com/RageLtd/arch-dgx-spark-iso) - Arch Linux installer ISO builder for DGX Spark, with the linux-dgx-spark kernel and archinstall config.
-- [scitrera/cuda-containers](https://github.com/scitrera/cuda-containers) - Prebuilt DGX Spark containers for vLLM, SGLang, llama.cpp, and PyTorch that build NCCL and PyTorch first as a base layer and version by vLLM release rather than tracking git.
 
 ## Community & Resource Collections
 
