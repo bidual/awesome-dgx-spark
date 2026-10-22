@@ -83,7 +83,6 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [MiaAI-Lab/Ornith-1.5-35B-A3B-DGX-Spark](https://github.com/MiaAI-Lab/Ornith-1.5-35B-A3B-DGX-Spark) - Ornith-1.5-35B-A3B NVFP4 with in-checkpoint MTP on one DGX Spark, 86.3 to 440 tok/s at 24 streams, plus two b12x patches for CUDA-graph capture.
 - [MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark](https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark) - Qwen3.8-Flash-Next NVFP4 on one DGX Spark under vLLM with the PLE table packed and memory-mapped, 48.7 tok/s prose single stream and 162.9 at eight on 512k YaRN.
 - [mouwp2026/Qwen3.8-Flash-Next-128GB-GB10-68toks-for-single-stream](https://github.com/mouwp2026/Qwen3.8-Flash-Next-128GB-GB10-68toks-for-single-stream) - Qwen3.8-Flash-Next on one GB10 with the 51B PLE table product-quantized to 1.5 GB and a 4-bit reduced-vocabulary MTP head at K=6, 49.3 to 68.6 tok/s single stream.
-- [mouwp2026/qwen3.8-flash-next-gx10-mtp-hashk](https://github.com/mouwp2026/qwen3.8-flash-next-gx10-mtp-hashk) - Qwen3.8-Flash-Next on one GB10 with the PLE table compressed to a 12.8 GB HashK build, FP8 dense cast, and a shrunk-vocabulary MTP head, 104 tok/s at six streams.
 - [mrexodia/Kolibri-1-vLLM-DGX-Spark](https://github.com/mrexodia/Kolibri-1-vLLM-DGX-Spark) - Kolibri-1 FP8 on one DGX Spark under vLLM 0.29 with Aleph Alpha's inference plugin, 262,144-token context, 42.0 tok/s generation and 97% prefix-cache hits in a pi coding-agent run.
 - [omnia-projetcs/spark-dgx](https://github.com/omnia-projetcs/spark-dgx) - Interactive vLLM Docker launcher for DGX Spark, 22 preset model configs from single-node NVFP4 to TP=4 Ray clusters, 10 with measured TTFT and concurrency tables.
 - [prestonlogan/Flint-vLLM-Single-DGX-Spark](https://github.com/prestonlogan/Flint-vLLM-Single-DGX-Spark) - Flint 39.8B-A2.5B MoE as NVFP4 GGUF on one DGX Spark under vLLM with vendored PR #62938 and an sm_121 gate patch to stock Marlin layers, 85 tok/s single stream.
@@ -167,7 +166,6 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [sf-stav/veloGB10](https://github.com/sf-stav/veloGB10) - Rust and CUDA inference engine built only for GB10 with bitwise-lossless MTP, Qwen3.8-Flash-Next EXL3 at 137 tok/s on one machine and 221 on four, pure-code decode.
 - [sixteen-miles-labs/sparklab](https://github.com/sixteen-miles-labs/sparklab) - GB10-only inference runtime for one DGX Spark with NVMe-backed MoE expert banks, GLM-5.3 753B at 1.29 decode tok/s and DeepSeek V4.1 Flash 552B at 1.05, both experimental.
 - [Th0rgal/dgx-spark-router](https://github.com/Th0rgal/dgx-spark-router) - Stdlib-only OpenAI-compatible router swapping one chat model at a time across vLLM NVFP4, llama.cpp GGUF, and SparkLab NVMe expert streaming, plus always-on vLLM ASR.
-- [vcruz305/DeepSeek-V4.1-Flash-EXL3-DGX-Spark-recipe](https://github.com/vcruz305/DeepSeek-V4.1-Flash-EXL3-DGX-Spark-recipe) - DeepSeek-V4.1-Flash EXL3 1.59 bpw on one DGX Spark in native ExLlamaV3 with the DSpark drafter aliased from mmap over ATS, 17.5 tok/s median on fresh prompts.
 - [xangel82/DS4-GB10-GX10-DSpark-CUDA](https://github.com/xangel82/DS4-GB10-GX10-DSpark-CUDA) - DS4 fork for DeepSeek-V4-Flash on one GB10, lossless DSpark and HybridLC decode at 24-26 t/s on tool calls against the original 13, 900-953 t/s prefill.
 
 ## Fine-tuning
@@ -503,7 +501,6 @@ Beyond LLMs, GB10's unified memory and aarch64 stack run scientific compute: pro
 - [kindlingai/kindling-spark-os](https://github.com/kindlingai/kindling-spark-os) - Read-only OS image for GB10 booted beside DGX OS with auto-revert and a 2 GiB display carveout lent to CUDA, GLM-5.3 TP=4 KV pool 365,440 to 404,608 tokens.
 - [kyuz0/gb10-toolboxes](https://github.com/kyuz0/gb10-toolboxes) - Prebuilt aarch64 CUDA 13.x containers for GB10 sm_121 with llama.cpp, antirez/ds4 and vLLM, rebuilt on four-hour upstream polls.
 - [maxspevack/spark-rocky](https://github.com/maxspevack/spark-rocky) - Rocky Linux 10.2 Live-USB for DGX Spark on the CIQ 6.18 kernel, shipping 4k pages because 64k faults on every driver branch but the 580, measured 10.4% slower.
-- [Neural-ICE/ICE-CoreOS](https://github.com/Neural-ICE/ICE-CoreOS) - Immutable bootc OS for DGX Spark on CentOS Stream 10 with a 4 KiB-page GB10 kernel, optional TPM2-unlocked LUKS2, and a signed-UKI USB installer.
 - [RageLtd/arch-dgx-spark-iso](https://github.com/RageLtd/arch-dgx-spark-iso) - Arch Linux installer ISO builder for DGX Spark, with the linux-dgx-spark kernel and archinstall config.
 
 ## Community & Resource Collections
