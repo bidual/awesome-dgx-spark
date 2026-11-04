@@ -102,6 +102,7 @@ DGX Spark is a desktop machine built on the GB10 Grace Blackwell Superchip (SM 1
 - [tonyd2wild/Qwen3.8-Flash-Next-NVFP4-DGX-Spark](https://github.com/tonyd2wild/Qwen3.8-Flash-Next-NVFP4-DGX-Spark) - NVIDIA's own Qwen3.8-Flash-Next NVFP4 checkpoint byte for byte on one DGX Spark, the 47.68 GiB PLE table left on NVMe and gathered 16 rows per token, 43.9 tok/s median.
 - [vcruz305/DSV4.1-Flash-1017-EXL3-Spark-recipe](https://github.com/vcruz305/DSV4.1-Flash-1017-EXL3-Spark-recipe) - DeepSeek-V4.1-Flash-1017 SAGE EXL3 1.62 bpw on one DGX Spark under vLLM with 1,418 cold experts read through an ATS alias file, 35.6-36.3 tok/s single stream, needle found at 518K.
 - [vcruz305/MiniMax-M3.1-Flash-EXL3-Spark-recipe](https://github.com/vcruz305/MiniMax-M3.1-Flash-EXL3-Spark-recipe) - MiniMax-M3.1-Flash SAGE EXL3 2.15 bpw on one DGX Spark under vLLM with the vllm-exl3 plugin and q4 KV, 48K context, 24.37 prose and 28.97 code tok/s single stream.
+- [yuanlin2004/chisel-spark-recipes](https://github.com/yuanlin2004/chisel-spark-recipes) - Qwen3.8-27B sparkrun recipes for one DGX Spark, NVFP4 with DFlash2 and a GDN state-replay vLLM plugin, 60.6 tok/s spark-arena c2 at 16k, 99.3-101.2% of BF16 on four tasks.
 - [yuyuyUuuuuuuuuuuu/vllm-hybrid-kv-nvme-spill](https://github.com/yuyuyUuuuuuuuuuuu/vllm-hybrid-kv-nvme-spill) - vLLM KV connector for GLM-5.3-Flash on two GB10 that restores hybrid MLA and Mamba state from NVMe, 91% fewer re-read tokens after a restart in a replay rig.
 
 ### llama.cpp
